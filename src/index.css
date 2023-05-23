@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  height: 100vh;
+  background: url("/img/banner.jpg") no-repeat center;
+  background-size: cover;
+  font-family: 'Catamaran', sans-serif;
+}
