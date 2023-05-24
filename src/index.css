@@ -17,3 +17,8 @@ body {
   background-size: cover;
   font-family: 'Catamaran', sans-serif;
 }
+
+
+button:disabled {
+  cursor: not-allowed;
+}

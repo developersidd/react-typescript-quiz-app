@@ -1,12 +1,14 @@
 import Quiz from "./components/Quiz";
+import { QuizContextProvider } from "./context/QuizContext";
 
 function App() {
-
   return (
-    <div className="p-12">
-      <h1 className="text-4xl font-extrabold text-center text-[#015063] font-[]"> REACT QUIZ </h1>
-      <Quiz />
-    </div>
+    <QuizContextProvider>
+      <div className="p-10">
+        <h1 className="text-4xl font-extrabold text-center text-[#015063]"> REACT QUIZ </h1>
+        <Quiz />
+      </div>
+    </QuizContextProvider>
   )
 }
 

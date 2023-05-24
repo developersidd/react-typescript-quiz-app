@@ -1,75 +1,87 @@
-type IOption = {
+export type IOption = {
     id: number,
     isCorrect: boolean,
     selected: boolean,
-    value: string
+    value: string,
+
 }
-type IQuiz = {
+export type IQuiz = {
     id: number,
     title: string,
-    options: IOption[]
+    options: IOption[],
+    isPassed: null | boolean,
 }
 
 export const data: IQuiz[] = [
     {
         id: 1,
         title: "When was js invented ?",
+        isPassed: null,
         options: [
             {
                 id: 1,
                 isCorrect: true,
                 selected: false,
-                value: "1995"
+                value: "1995",
+
             },
 
             {
                 id: 2,
                 isCorrect: false,
                 selected: false,
-                value: "1996"
+                value: "1996",
+
             },
             {
                 id: 3,
                 isCorrect: false,
                 selected: false,
-                value: "1994"
+                value: "1994",
+
             },
             {
                 id: 4,
                 isCorrect: false,
                 selected: false,
-                value: "1971"
+                value: "1971",
+
             },
         ]
     },
     {
         id: 2,
         title: "Who was invented js ?",
+        isPassed: null,
         options: [
             {
                 id: 1,
                 isCorrect: false,
                 selected: false,
-                value: "AB Siddik"
+                value: "AB Siddik",
+
             },
 
             {
                 id: 2,
                 isCorrect: false,
                 selected: false,
-                value: "Mark Zuckerberg"
+                value: "Mark Zuckerberg",
+
             },
             {
                 id: 3,
                 isCorrect: false,
                 selected: false,
-                value: "john sina"
+                value: "john sina",
+
             },
             {
                 id: 4,
                 isCorrect: true,
                 selected: false,
-                value: "Brendan Each"
+                value: "Brendan Each",
+
             },
         ]
     }
