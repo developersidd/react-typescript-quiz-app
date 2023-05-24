@@ -1,4 +1,5 @@
 import { useQuizContext } from "../context/QuizContext";
+import { IQuiz } from "../data/quizData";
 
 type QuizInputProps = {
   optionId: number;
@@ -7,19 +8,14 @@ type QuizInputProps = {
   selected: boolean;
   quizNumber: number;
   isPassed: null | boolean;
+  targetedQuiz: IQuiz
 };
 
 const successStyle = "from-green-400 to-green-500";
 const failStyle = "from-red-500 to-red-700";
 
-const QuizInput = ({
-  optionId,
-  selected,
-  value,
-  quizNumber,
-  isCorrect,
-  isPassed,
-}: QuizInputProps) => {
+const QuizInput = (props: QuizInputProps) => {
+  const { optionId, selected, value, quizNumber, isCorrect, isPassed, targetedQuiz } = props
   const { toggleQuizOption } = useQuizContext();
 
   const handleQuizSubmit = () => {
@@ -33,7 +29,7 @@ const QuizInput = ({
       : selected && failStyle
     } ${isPassed !== null && isCorrect && successStyle}`;
 
-  console.log("buttonClass:", buttonClass)
+  //console.log("buttonClass:", buttonClass)
 
   return (
     <button
