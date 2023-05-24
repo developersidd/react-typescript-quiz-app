@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useQuizContext } from "../context/QuizContext";
 
 type QuizInputProps = {
@@ -10,7 +9,7 @@ type QuizInputProps = {
   isPassed: null | boolean;
 };
 
-const successStyle = "from-green-400 to-green-500 bg-red-700";
+const successStyle = "from-green-400 to-green-500";
 const failStyle = "from-red-500 to-red-700";
 
 const QuizInput = ({
@@ -27,14 +26,13 @@ const QuizInput = ({
     toggleQuizOption(quizNumber, optionId);
   };
 
-  const buttonClass = `${
-    isPassed === null
-      ? ""
-      : isPassed === true && isCorrect
+  const buttonClass = `${isPassed === null
+    ? ""
+    : isPassed === true && isCorrect
       ? successStyle
       : selected && failStyle
-  } ${isPassed !== null && isCorrect && !isPassed && successStyle}`;
-  
+    } ${isPassed !== null && isCorrect && successStyle}`;
+
   console.log("buttonClass:", buttonClass)
 
   return (
